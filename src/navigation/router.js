@@ -23,13 +23,16 @@ export default function Router() {
     const authSubscriber = auth().onAuthStateChanged(result => {
       setUser(result);
       if (initializing) setInitializing(false);
-      dispatch(
-        authSlice.actions.signIn({
-          name: result.displayName,
-          email: result.email,
-          avatar: result.photoURL,
-        }),
-      );
+
+      if (user) {
+        dispatch(
+          authSlice.actions.signIn({
+            name: result.displayName,
+            email: result.email,
+            avatar: result.photoURL,
+          }),
+        );
+      }
     });
 
     // unsubscribe on unmount
