@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "638435823425",
+    "firebase_url": "https://superapp-18682.firebaseio.com",
+    "project_id": "superapp-18682",
+    "storage_bucket": "superapp-18682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638435823425:android:194f5ab2b10c770cf0dbc0",
+        "android_client_info": {
+          "package_name": "com.superapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638435823425-083dlqeolmo6ijdoh5hnvigqtilujmr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.superapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "638435823425-dvo745p1siee64cho3cqtb5luseuhbun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-4k8kkMYrCHd4bYc4uOMN55OmD_bmXaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638435823425-dvo745p1siee64cho3cqtb5luseuhbun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

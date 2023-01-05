@@ -1,0 +1,78 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "react-native"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
+  "rules": {
+    "linebreak-style": 0,
+    "no-const-assign": "warn",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "comma-dangle": "off",
+    "import/order": "off",
+    "object-curly-newline": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/jsx-props-no-spreading": "off",
+    "arrow-parens": "off",
+    "indent": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "no-unused-expressions": "off",
+    "function-paren-newline": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "semi": "off",
+    "operator-linebreak": "off",
+    "global-require": "off",
+    "react/prop-types": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-curly-newline": "off",
+    "react/require-default-props": "off",
+    "max-len": "off",
+    "no-empty-pattern": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "import/prefer-default-export": ["off"],
+    "react/jsx-no-bind": ["off"],
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "enableDangerousAutofixThisMayCauseInfiniteLoops": false
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
