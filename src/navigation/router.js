@@ -24,7 +24,7 @@ export default function Router() {
       setUser(result);
       if (initializing) setInitializing(false);
 
-      if (user) {
+      if (result) {
         dispatch(
           authSlice.actions.signIn({
             name: result.displayName,
