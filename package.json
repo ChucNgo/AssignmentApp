@@ -15,18 +15,18 @@
     "@react-native-google-signin/google-signin": "^7.2.2",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.2",
-    "react-native-screens": "^3.13.1",
     "@react-navigation/stack": "^6.1.1",
     "@reduxjs/toolkit": "^1.8.2",
+    "moment-timezone": "^0.5.34",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-fbsdk-next": "^8.0.5",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-safe-area-context": "^4.4.1",
-    "umi-request": "^1.4.0",
-    "moment-timezone": "^0.5.34",
+    "react-native-screens": "^3.13.1",
     "react-redux": "^7.2.6",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

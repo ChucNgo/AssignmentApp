@@ -17,17 +17,15 @@ import {revokeSocialAccount} from '../../utils/common';
 export default function SignIn({navigation}) {
   const signinWithGoogle = async () => {
     try {
-      // Get the users ID token
       const {idToken, ...rest} = await GoogleSignin.signIn();
-      // Create a Google credential with the token
-      alert('result ' + JSON.stringify(rest));
       console.log('result', JSON.stringify(rest));
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      // Sign-in the user with the credential
       await auth().signInWithCredential(googleCredential);
-      navigation.navigate('News');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'News'}],
+      });
     } catch (e) {
-      alert('signinWithGoogle error ' + JSON.stringify(e));
       console.log(e);
     }
   };
@@ -44,23 +42,20 @@ export default function SignIn({navigation}) {
       if (result.isCancelled) {
         return;
       }
-      // Once signed in, get the users AccesToken
       const data = await AccessToken.getCurrentAccessToken();
-      alert('result ' + JSON.stringify(data));
       console.log('data', data);
       if (!data) {
         throw 'Something went wrong obtaining access token';
       }
-      // Use the Access Token to create a facebook credential.
       const facebookCredential = auth.FacebookAuthProvider.credential(
         data.accessToken,
       );
-
-      // Use the facebook credential to sign in to the application.
       await auth().signInWithCredential(facebookCredential);
-      navigation.navigate('News');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'News'}],
+      });
     } catch (e) {
-      alert('signInWithFacebook error ' + JSON.stringify(e));
       console.log(e);
     }
   };
@@ -70,7 +65,7 @@ export default function SignIn({navigation}) {
       <StatusBar barStyle="light-content" />
       <View style={styles.container}>
         <View style={styles.topContent}>
-          <Text style={styles.mainText}>Social Auth</Text>
+          <Text style={styles.mainText}>Assignment</Text>
         </View>
         <View style={styles.bottomContent}>
           <TouchableOpacity
@@ -124,13 +119,14 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   googleButton: {
+    width: 300,
     backgroundColor: 'white',
     borderRadius: 4,
-    paddingHorizontal: 34,
     paddingVertical: 16,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 12,
   },
   googleButtonText: {
     marginLeft: 16,
