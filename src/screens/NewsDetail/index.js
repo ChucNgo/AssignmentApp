@@ -26,7 +26,6 @@ const NewsDetail = ({route}) => {
       .collection('MESSAGES')
       .orderBy('createdAt', 'desc')
       .onSnapshot(querySnapshot => {
-        console.log('querySnapshot', querySnapshot?.docs);
         const messages = querySnapshot?.docs?.map(doc => {
           const firebaseData = doc?.data();
 
@@ -42,7 +41,6 @@ const NewsDetail = ({route}) => {
               ...firebaseData.user,
             };
           }
-          console.log('data', data);
           return data;
         });
 

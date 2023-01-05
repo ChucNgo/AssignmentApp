@@ -18,16 +18,13 @@ export default function SignIn({navigation}) {
   const signinWithGoogle = async () => {
     try {
       const {idToken, ...rest} = await GoogleSignin.signIn();
-      console.log('result', JSON.stringify(rest));
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       await auth().signInWithCredential(googleCredential);
       navigation.reset({
         index: 0,
         routes: [{name: 'News'}],
       });
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   const signInWithFacebook = async () => {
@@ -37,13 +34,11 @@ export default function SignIn({navigation}) {
         'public_profile',
         'email',
       ]);
-      console.log('result', result);
       const currentProfile = await Profile.getCurrentProfile();
       if (result.isCancelled) {
         return;
       }
       const data = await AccessToken.getCurrentAccessToken();
-      console.log('data', data);
       if (!data) {
         throw 'Something went wrong obtaining access token';
       }
@@ -55,9 +50,7 @@ export default function SignIn({navigation}) {
         index: 0,
         routes: [{name: 'News'}],
       });
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   return (
