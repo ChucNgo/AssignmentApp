@@ -3,12 +3,9 @@ const {createSlice} = require('@reduxjs/toolkit');
 const initialState = {
   info: {
     email: '',
-    external_key: '',
-    givenName: '',
-    family_name: '',
     name: '',
+    avatar: '',
   },
-  show: true,
 };
 
 const authSlice = createSlice({
@@ -24,10 +21,8 @@ const authSlice = createSlice({
     signOut: (state, action) => {
       state.info = {
         email: '',
-        external_key: '',
-        givenName: '',
-        family_name: '',
         name: '',
+        avatar: '',
       };
     },
   },

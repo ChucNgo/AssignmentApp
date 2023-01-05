@@ -2,11 +2,13 @@ import {View, Text, StyleSheet, Linking, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 
-const NewsItem = ({title, author, url, ...props}) => {
+const NewsItem = ({title, author, id, url}) => {
   const navigation = useNavigation();
 
   const openDetail = () => {
-    navigation.navigate('NewsDetail', {info: props});
+    navigation.navigate('NewsDetail', {
+      info: {title, author, id: String(id), url},
+    });
   };
 
   return (

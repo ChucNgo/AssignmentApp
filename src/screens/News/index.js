@@ -7,12 +7,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {revokeSocialAccount} from '../../utils/common';
 import useRequest from '../../apis/hook';
 import {getLastestNews} from '../../apis/news';
 import NewsItem from '../../components/NewsItem';
+import {useSelector} from 'react-redux';
 
 export default function NewsScreen({navigation}) {
+  const authData = useSelector(s => s.auth);
+  const {name} = authData.info;
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -24,7 +26,12 @@ export default function NewsScreen({navigation}) {
     manual: true,
     onSuccess: async result => {
       if (result?.status === 'ok') {
-        setData(result?.articles ?? []);
+        const formatedArticles =
+          result?.articles.map((item, index) => ({
+            id: index,
+            ...item,
+          })) ?? [];
+        setData(formatedArticles);
       }
       setLoading(false);
     },
@@ -36,7 +43,7 @@ export default function NewsScreen({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.topContent}>
-        <Text style={styles.title}>Hi there, you're viewing Tesla news!</Text>
+        <Text style={styles.title}>Hi {name}</Text>
       </View>
 
       {loading ? (
