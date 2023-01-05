@@ -23,7 +23,7 @@ const App = () => {
       <SafeAreaView style={{flex: 0, backgroundColor: 'white'}} />
       <SafeAreaProvider style={{flex: 1}}>
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="SignIn">
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="News" component={NewsScreen} />
           </Stack.Navigator>

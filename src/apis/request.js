@@ -1,6 +1,6 @@
 import request from 'umi-request';
 
-export const callRequest = async (url, params = {}, body = {}) => {
+export const fetch = async (url, params = {}, body = {}) => {
   let headers = {
     baseUrl: '',
   };
